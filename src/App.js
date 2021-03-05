@@ -30,10 +30,10 @@ function CommonHeader() {
             <button className="btn btn-secondary">Page1</button>
           </Link>
           <Link to="/page2">
-            <button className="btn btn-secondary">Page1</button>{" "}
+            <button className="btn btn-secondary">Page2</button>{" "}
           </Link>
           <Link to="/page3">
-            <button className="btn btn-secondary">Page1</button>{" "}
+            <button className="btn btn-secondary">Page3</button>{" "}
           </Link>
         </div>
       </div>
