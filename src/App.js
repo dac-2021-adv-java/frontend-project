@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+import Page1 from "./pages/Page1";
+import Page2 from "./pages/Page2";
+import Page3 from "./pages/Page3";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+      <CommonHeader />
+      <Route path="/page1" component={Page1} />
+      <Route path="/page2" component={Page2} />
+      <Route path="/page3" component={Page3} />
+      <Route exact path="/" component={Page1} />
+    </Router>
+  );
+}
+
+function CommonHeader() {
+  return (
+    <div className="container-fluid">
+      <div className="row bg-dark" style={{ height: "55px" }}>
+        <div className="col-3 d-flex align-items-center text-light ">
+          Project Book
+        </div>
+
+        <div className="col-9 d-flex justify-content-end align-items-center">
+          <Link to="/">
+            <button className="btn btn-secondary">Page1</button>
+          </Link>
+          <Link to="/page2">
+            <button className="btn btn-secondary">Page1</button>{" "}
+          </Link>
+          <Link to="/page3">
+            <button className="btn btn-secondary">Page1</button>{" "}
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
